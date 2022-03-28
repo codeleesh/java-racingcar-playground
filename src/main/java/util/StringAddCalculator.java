@@ -7,18 +7,19 @@ import java.util.regex.Pattern;
 
 public class StringAddCalculator {
 
-    public static final int NULL_OR_EMPTY = 0;
+    public static final int RESULT_NULL_OR_EMPTY = 0;
     private static final String COMMA_N_DELIMITER = ",|:";
     private static final String CUSTOM_SEPARATOR = "//(.)\n(.*)";
     private static final Pattern COMMA_N_DELIMITER_PATTERN = Pattern.compile(COMMA_N_DELIMITER);
     private static final Pattern CUSTOM_PATTERN = Pattern.compile(CUSTOM_SEPARATOR);
+    private static final int ONE_LENGTH = 1;
 
     public static int splitAndSum(final String str) {
 
         if (Objects.isNull(str) || str.isEmpty()) {
-            return NULL_OR_EMPTY;
+            return RESULT_NULL_OR_EMPTY;
         }
-        if (str.length() == 1) {
+        if (str.length() == ONE_LENGTH) {
             return Integer.parseInt(str);
         }
         if (COMMA_N_DELIMITER_PATTERN.matcher(str).find()) {
@@ -41,7 +42,7 @@ public class StringAddCalculator {
         }
     }
 
-    public static int sum(final String[] strings) {
+    private static int sum(final String[] strings) {
         int result = 0;
         for (String str : strings) {
             validMinusNum(str);
