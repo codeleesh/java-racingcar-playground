@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class BallTest {
 
-    @DisplayName("BaseBall은 1~9 사이 값 생성")
+    @DisplayName("BaseBall 1~9 사이 값 생성")
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 8, 9})
     void 번호생성(int number) {
@@ -18,7 +18,7 @@ class BallTest {
         assertThat(ball.value()).isEqualTo(number);
     }
 
-    @DisplayName("BaseBall은 1~9까지 외에 값은 예외처리")
+    @DisplayName("BaseBall 1~9까지 외에 값은 예외처리")
     @ParameterizedTest
     @ValueSource(ints = {-1, 0, 10, 11})
     void 번호생성_예외(int number) {
