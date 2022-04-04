@@ -12,7 +12,7 @@ public class MatchResult {
     }
 
     public static MatchResult empty() {
-        return new MatchResult(ZERO, MatchResult.ZERO);
+        return new MatchResult(ZERO, ZERO);
     }
 
     public static MatchResult of(final int strike, final int ball) {
